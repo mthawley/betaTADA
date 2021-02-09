@@ -3,8 +3,8 @@ test_that("multiplication works", {
 })
 
 test_that("read query from file works", {
-  df <- readWQPdata(statecode="WV",countycode='037',characteristicName="Atrazine")
-  # this is probably a lousy test...
+  df <- readWQP(statecode="WV",countycode='037',characteristicName="Atrazine")
+  # this is a lousy test...
   numrec <- nrow(df)
   expect_equal(numrec, 35)  # replace this with a df comparision?
 

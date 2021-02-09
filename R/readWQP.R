@@ -1,8 +1,10 @@
 library(dataRetrieval)
 
-getWCPdata <- function(inURL){
+readWQP <- function(...){
   # just a shell function that reads uses dataRetrieval::readWQPdata for now
-  # using an input URL
-  df <- readWQPdata(inURL)
+  # and doesn't include any testing
+  inArgs  <- list(...)
+  df <- readWQPdata(inArgs)
   return(df)
+
 }
