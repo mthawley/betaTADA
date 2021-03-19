@@ -1,4 +1,4 @@
-# this might become the new readWQP to avoid confusion
+# this has replaced readWQP to avoid confusion
 
 library(dataRetrieval)
 
@@ -7,10 +7,19 @@ queryWQP <- function(...){
   inArgs  <- list(...)
   print(inArgs)
 
+  # x <- inArgs
+  # return(x)
+
   # query logic will go here
-  #  (do we have a good set of inputs?)
+  #      do we have a good set of inputs?
+  # currently an example only
+  #
+  options <- c('statecode','countycode','characteristicName')
 
-
+  if (!all(names(inArgs) %in% options)){
+    message(sprintf("These are not valid inputs.  Check domain values and try again.\n"))
+    return()
+  }
   # Get info on size of data return
   sites <- whatWQPdata(inArgs)
   siteCount <- length(sites$resultCount)
