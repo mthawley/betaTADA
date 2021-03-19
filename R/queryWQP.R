@@ -16,8 +16,9 @@ queryWQP <- function(...){
   #
   options <- c('statecode','countycode','characteristicName')
 
+  # make sure all args are valid parameters
   if (!all(names(inArgs) %in% options)){
-    message(sprintf("These are not valid inputs.  Check domain values and try again.\n"))
+    message(sprintf("These are not valid inputs. Check domain values and try again.\n"))
     return()
   }
   # Get info on size of data return
